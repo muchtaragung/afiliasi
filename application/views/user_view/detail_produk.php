@@ -1,4 +1,4 @@
-<?php $this->load->view('user_view/template/header'); ?>
+<?php $this->load->view('template/header'); ?>
 
 <body>
 
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 	</div>
-	<?php $this->load->view('user_view/template/script'); ?>
+	<?php $this->load->view('template/script'); ?>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- <script>

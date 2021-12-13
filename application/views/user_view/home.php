@@ -1,4 +1,4 @@
-<?php $this->load->view('user_view/template/header'); ?>
+<?php $this->load->view('template/header'); ?>
 
 <body>
     <style>
@@ -52,7 +52,7 @@
             });
         });
     </script>
-    <?php $this->load->view('user_view/template/script'); ?>
+    <?php $this->load->view('template/script'); ?>
 
 </body>
 

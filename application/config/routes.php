@@ -54,6 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // dinamis
+$route['login'] = 'auth';
+$route['logout'] = 'auth/logout';
 $route['(:any)'] = 'produk/aff_produk/$1';
 $route['(:any)/produk/(:any)'] = 'produk/detail_produk/$1/$2';
 $route['pemesanan/(:any)'] = 'pemesanan/cari/$1';
