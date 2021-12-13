@@ -7,7 +7,7 @@
         }
 
         #home tr:hover {
-            background-color: yellow;
+            background-color: lightblue;
             transform: scale(1.1);
         }
     </style>
@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 col-12">
-                    <table id="home" class="table table-hover">
+                    <table id="home" class="table table-borderless">
                         <thead>
                             <tr>
                                 <th></th>
@@ -32,15 +32,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            $no = 1;
-                            foreach ($user as $data) : ?>
+                            <?php foreach ($user as $data) : ?>
                                 <tr class='clickable-row' data-href='<?= base_url() ?><?= str_replace(' ', '-', strtolower($data->name)); ?>'>
                                     <td><?= $data->name ?></td>
-                                    <td class="float-right"><?= $data->phone ?></td>
+                                    <td class="text-right"><?= $data->phone ?></td>
                                 </tr>
                             <?php endforeach ?>
-
                         </tbody>
                     </table>
                 </div>

@@ -1,6 +1,7 @@
 <?php $this->load->view('user_view/template/header'); ?>
 
 <body>
+
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -93,6 +94,23 @@
 		</div>
 	</div>
 	<?php $this->load->view('user_view/template/script'); ?>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- <script>
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: false,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+			if (result.isConfirmed) {
+				window.location.href = '<?= base_url() ?>';
+			}
+		})
+	</script> -->
 	<script type="text/javascript">
 		function pay() {
 			// $('#form').validate();
@@ -125,16 +143,30 @@
 
 					checkout.process(result.reference, {
 						successEvent: function(result) {
+
 							// tambahkan fungsi sesuai kebutuhan anda
 							console.log('success');
 							console.log(result);
 							alert('Payment Success');
 						},
 						pendingEvent: function(result) {
+							Swal.fire({
+								// title: 'Are you sure?',
+								text: "Pesanan berhasil dilakukan, Silahkan lakukan pembayaran. Untuk lebih lengkap silahkan cek email anda",
+								icon: 'success',
+								showCancelButton: false,
+								confirmButtonColor: '#3085d6',
+								cancelButtonColor: '#d33',
+								confirmButtonText: 'Menu utama'
+							}).then((result) => {
+								if (result.isConfirmed) {
+									window.location.href = '<?= base_url() ?>';
+								}
+							})
 							// tambahkan fungsi sesuai kebutuhan anda
-							console.log('pending');
-							console.log(result);
-							alert('Payment Pending');
+							// console.log('pending');
+							// console.log(result);
+							// alert('Payment Pending');
 						},
 						errorEvent: function(result) {
 							// tambahkan fungsi sesuai kebutuhan anda
@@ -142,12 +174,21 @@
 							console.log(result);
 							alert('Payment Error');
 						},
-						closeEvent: function(result) {
-							// tambahkan fungsi sesuai kebutuhan anda
-							console.log('customer closed the popup without finishing the payment');
-							console.log(result);
-							alert('customer closed the popup without finishing the payment');
-						}
+						// closeEvent: function(result) {
+						// Swal.fire({
+						// title: 'Are you sure?',
+						// text: "customer closed the popup without finishing the payment",
+						// icon: 'warning',
+						// showCancelButton: false,
+						// confirmButtonColor: '#3085d6',
+						// cancelButtonColor: '#d33',
+						// confirmButtonText: 'Yes, delete it!'
+						// })
+						// tambahkan fungsi sesuai kebutuhan anda
+						// console.log('customer closed the popup without finishing the payment');
+						// console.log(result);
+						// alert('customer closed the popup without finishing the payment');
+						// }
 					});
 
 				},

@@ -23,9 +23,9 @@ class Transaksi extends CI_Controller
         $merchantOrderId = time(); // from merchant, unique   
         $additionalParam = ''; // optional
         $merchantUserInfo = ''; // optional
-        $customerVaName =  $this->input->post('name', true);; // display name on bank confirmation display
-        $callbackUrl = 'http://YOUR_SERVER/callback'; // url for callback
-        $returnUrl = 'http://YOUR_SERVER/return'; // url for redirect
+        $customerVaName =  $this->input->post('name', true); // display name on bank confirmation display
+        $callbackUrl = 'http://localhost/duitmu'; // url for callback
+        $returnUrl = 'http://localhost/duitmu'; // url for redirect
         $expiryPeriod = 10; // set the expired time in minutes
         $signature = md5($merchantCode . $merchantOrderId . $paymentAmount . $merchantKey);
         // Customer Detail
